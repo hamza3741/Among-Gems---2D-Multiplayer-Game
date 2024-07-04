@@ -11,8 +11,8 @@
 #include<ctime>
 #include<iostream>
 #include<chrono>
-#include <X11/Xlib.h>
-#include <SFML/Audio.hpp>
+#include<X11/Xlib.h>
+#include<SFML/Audio.hpp>
 
 using namespace std;
 using namespace sf;
@@ -144,12 +144,12 @@ void create_board(){
     
     //PLAYER2 = GREEN
     sf::Texture Green_Player;
-    Green_Player.loadFromFile("Green2.png");
+    Green_Player.loadFromFile("Green1.png");
     sf::Sprite green1;
     green1.setTexture(Green_Player);
     green1.setPosition(((n-1)*block_height),(n-1)*block_width);
-    float green_width=(block_width*1.0)/199.0;
-    float green_height=(block_height*1.0)/253.0;
+    float green_width=(block_width*1.0)/800.0;
+    float green_height=(block_height*1.0)/800.0;
     green1.setScale(green_width,green_height);
     window.draw(green1);    
 
@@ -163,10 +163,10 @@ void create_board(){
     int random_y=rand()%(n);
     gems[i].setTexture(GEM[i]);
     gems[i].setPosition(random_x*block_height+(block_height/4),random_y*block_width+(block_width/4));
-    float gem_width=(block_width*1.0)/225.0;
-    float gem_height=(block_height*1.0)/225.0;
+    float gem_width=(block_width*1.0)/0.0;
+    float gem_height=(block_height*1.0)/0.0;
     //cout<<"\nRandomX:"<<random_x<<"RandomY:"<<random_y<<endl;
-    gems[i].setScale(green_width/2,green_height/2);
+    gems[i].setScale(green_width*2,green_height*2);
     window.draw(gems[i]);    
    }
         //font for message of red player
